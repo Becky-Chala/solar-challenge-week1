@@ -1,0 +1,10 @@
+venv/
+.venv/
+
+__pycache__/
+
+.ipynb_checkpoints/
+
+# Data files (if you plan to keep data locally but not commit it)
+data/
+*.csv
