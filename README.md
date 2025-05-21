@@ -1,64 +1,132 @@
-# solar-challenge-week1
+````markdown
+# 🌞 Cross-Country Solar Data Analysis – Week 0 Challenge
 
-Week 1 challenge for solar data analysis.
-
-## Environment Setup
-
-To set up the development environment for this project:
-
-  Clone the repository:
-    
-    git clone https://github.com/Becky-Chala/solar-challenge-week1.git
-    cd solar-challenge-week1
-    py -m venv .venv
-    .venv\Scripts\activate  #this will activate the virtual enviroment
- 
-  
-  # ☀️ Solar Dataset EDA: West African Countries
-
-This project performs **end-to-end exploratory data analysis (EDA), profiling, and cleaning** on solar energy datasets from multiple West African countries. The objective is to prepare these datasets for meaningful **region-wise comparison** and **solar potential ranking** to support renewable energy planning and investment.
+Welcome to the Week 0 challenge of 10 Academy's Artificial Intelligence Mastery program. This repository contains the complete solution to the solar farm analysis project, including data profiling, exploratory analysis, cross-country comparison, and an interactive dashboard.
 
 ---
 
-## 📂 Countries Covered
+## 🚀 Project Objective
 
-- 🇧🇯 **Benin**
-- 🇸🇱 **Sierra Leone**
-- 🇹🇬 **Togo**
-
-Each country has its own EDA notebook and cleaned CSV file (not included in repo due to `.gitignore` rules).
+MoonLight Energy Solutions is seeking data-driven insights to guide sustainable investments in solar farms across **Benin**, **Sierra Leone**, and **Togo**. This project analyzes key environmental metrics from each country to identify high-potential regions for solar deployment.
 
 ---
 
-## 🧩 Problem Statement
+## 📁 Repository Structure
 
-Solar energy potential is high in Sub-Saharan Africa, but poor-quality or uncleaned datasets make it difficult to compare regions and make strategic decisions. This project:
-- Cleans, profiles, and explores solar datasets per country.
-- Detects anomalies, missing values, and data quality issues.
-- Provides statistical and visual insights into solar potential, temperature effects, and wind patterns.
+```bash
+.
+├── data/                      # Raw & cleaned data (ignored in git)
+├── notebooks/                # EDA and comparison notebooks
+│   ├── benin_eda.ipynb
+│   ├── sierra_leone_eda.ipynb
+│   ├── togo_eda.ipynb
+│   └── compare_countries.ipynb
+├── app/                      # Streamlit dashboard
+│   ├── __init__.py
+│   ├── main.py
+│   └── utils.py
+├── dashboard_screenshots/    # Screenshot(s) of Streamlit app
+├── .github/workflows/        # GitHub Actions CI pipeline
+│   └── ci.yml
+├── .gitignore
+├── requirements.txt
+├── README.md                 # Project documentation
+└── reports/                  # Final report (Markdown or PDF)
+````
+
+---
+
+## 🧪 Methodology
+
+This project followed a structured data science pipeline:
+
+1. **Git & Environment Setup**
+
+   * Repo initialized with `.gitignore`, `requirements.txt`, and GitHub Actions CI.
+   * Environment reproducibility ensured via `venv` and proper commit hygiene.
+
+2. **Data Profiling & Cleaning**
+
+   * Handled missing values and outliers using statistical techniques.
+   * Computed Z-scores for key metrics (GHI, DNI, DHI, ModA, ModB, WS).
+   * Cleaned datasets exported to `/data` folder for analysis.
+
+3. **Exploratory Data Analysis (EDA)**
+
+   * Summary stats, correlation heatmaps, and time series visualizations.
+   * Impact of cleaning events analyzed.
+   * Wind and temperature distributions explored.
+
+4. **Cross-Country Comparison**
+
+   * Boxplots for irradiance metrics.
+   * Summary table with mean, median, and standard deviation.
+   * One-way ANOVA test on GHI to confirm statistically significant differences.
+
+5. **Interactive Dashboard (Bonus)**
+
+   * Developed using Streamlit for real-time exploration of solar metrics.
+   * Users can select country and metric for dynamic plots and tables.
 
 ---
 
-## 🧪 EDA Workflow Summary
+## 📊 Key Insights
 
-### ✅ Step-by-step for Each Country:
-1. **Summary Statistics & Missing Values**
-   - `df.describe()` and null percentage check.
-2. **Outlier Detection**
-   - Z-score method on key features like `GHI`, `DNI`, `DHI`, `ModA`, `WS`.
-3. **Missing Value Handling**
-   - Imputation with column medians.
-4. **Time Series Analysis**
-   - `GHI`, `DNI`, `Tamb` plotted over time.
-5. **Sensor Cleaning Impact**
-   - `ModA`, `ModB` before/after cleaning.
-6. **Correlation Analysis**
-   - Heatmaps and scatter plots of relevant variables.
-7. **Wind Analysis**
-   - Wind rose plots and wind distribution histograms.
-8. **Temperature-Humidity Interaction**
-   - Relative humidity effects on solar radiation.
-9. **Bubble Charts**
-   - `GHI` vs `Tamb`, with bubble size = RH or BP.
+* **Benin** showed the highest average and median GHI, indicating top solar potential.
+* **Sierra Leone** had high variability, offering both opportunity and uncertainty.
+* **Togo** exhibited stable, moderate solar radiation — suitable for balanced deployment.
+* **Statistical Test:** One-way ANOVA on GHI yielded a p-value < 0.0001, confirming the differences across countries are significant.
 
 ---
+
+## 💻 How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Becky-Chala/solar-challenge-week0.git
+cd solar-challenge-week0
+```
+
+### 2. Create a virtual environment and install dependencies
+
+```bash
+python -m venv venv
+venv\Scripts\activate           # Windows
+
+pip install -r requirements.txt
+```
+
+### 3. Launch the Streamlit dashboard
+
+---
+
+## ✅ Tasks Completed
+
+* [x] Task 1 – GitHub setup and CI/CD pipeline
+* [x] Task 2 – Data cleaning, profiling, and exploratory analysis
+* [x] Task 3 – Cross-country comparison and statistical testing
+* [x] Bonus – Streamlit dashboard
+
+---
+
+## 📌 Notes
+
+* All data files in the `/data` folder are excluded from version control.
+* This project was developed as part of the 10 Academy Week 0 challenge.
+
+---
+
+## 🧠 Author
+
+**Bereket**
+Candidate, 10 Academy – Artificial Intelligence Mastery
+\[Ethiopia, 2025]
+
+---
+
+## 📄 License
+
+This project is for educational and evaluation purposes under the 10 Academy program. No commercial license is granted.
+
+```
