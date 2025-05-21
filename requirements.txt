@@ -1,1 +1,6 @@
 #dependecies for python
+streamlit
+pandas
+matplotlib
+seaborn
+scipy
